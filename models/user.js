@@ -26,6 +26,15 @@ const Schema = new mongoose.Schema(
         watched: Boolean,
       },
     ],
+    watchlist: [
+      {
+        movie: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Movie",
+        },
+        watched: Boolean,
+      },
+    ],
     isAdmin: {
       type: Boolean,
       default: false,
@@ -36,6 +45,6 @@ const Schema = new mongoose.Schema(
   }
 );
 
-const UserSchema = mongoose.model("User", Schema);
+const UserSchema = mongoose.model("user", Schema);
 
 module.exports = UserSchema;
